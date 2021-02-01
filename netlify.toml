@@ -1,2 +1,7 @@
 [build]
   functions = "dist/functions"
+
+[[redirects]]
+  from = "/test/"
+  to = "/.netlify/functions/calculate-age"
+  status = 200
