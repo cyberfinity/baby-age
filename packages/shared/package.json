@@ -1,0 +1,19 @@
+{
+  "name": "@cyberfinity/baby-age-shared",
+  "version": "0.0.0",
+  "description": "Code shared by client- and server-side parts of baby-age app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/cyberfinity/baby-age.git"
+  },
+  "author": "James Nash (https://cirrus.twiddles.com/)",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/cyberfinity/baby-age/issues"
+  },
+  "homepage": "https://github.com/cyberfinity/baby-age#readme"
+}

@@ -1,5 +1,7 @@
 [build]
-  functions = "dist/functions"
+  command = "npm run ci"
+  publish = "packages/site/dist/"
+  functions = "packages/lambda/dist/"
 
 [[redirects]]
   from = "/test/"

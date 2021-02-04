@@ -1,28 +1,17 @@
 {
-  "name": "@cyberfinity/baby-age-monorepo",
-  "private": true,
+  "name": "@cyberfinity/baby-age-lambda",
   "version": "0.0.0",
-  "description": "A web app to calculate your baby's age",
+  "description": "Serverless functions for baby-age app",
   "main": "index.js",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "build": "lerna run build",
-    "clean": "lerna run clean",
-    "test": "lerna run test",
-    "ci": "npm run bootstrap && npm run build"
+    "build": "tsc",
+    "clean": "del dist/*",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/cyberfinity/baby-age.git"
   },
-  "keywords": [
-    "age",
-    "calculator",
-    "baby",
-    "weeks",
-    "months",
-    "days"
-  ],
   "author": "James Nash (https://cirrus.twiddles.com/)",
   "license": "UNLICENSED",
   "bugs": {
@@ -30,6 +19,9 @@
   },
   "homepage": "https://github.com/cyberfinity/baby-age#readme",
   "devDependencies": {
-    "lerna": "^3.22.1"
+    "@types/aws-lambda": "^8.10.71",
+    "@types/luxon": "^1.25.1",
+    "del-cli": "^3.0.1",
+    "typescript": "^4.1.3"
   }
 }
