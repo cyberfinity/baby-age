@@ -4,7 +4,8 @@
   "description": "Front-end for baby-age app",
   "main": "index.js",
   "scripts": {
-    "build": "mkdir -p dist/ && cp -a src/* dist/",
+    "build": "gulp",
+    "start": "gulp serve",
     "clean": "del dist/*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +20,9 @@
   },
   "homepage": "https://github.com/cyberfinity/baby-age#readme",
   "devDependencies": {
-    "del-cli": "^3.0.1"
+    "@11ty/eleventy": "^0.11.1",
+    "del-cli": "^3.0.1",
+    "gulp": "^4.0.2",
+    "gulp-dart-sass": "^1.0.2"
   }
 }
