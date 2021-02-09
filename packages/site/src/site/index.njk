@@ -1,0 +1,22 @@
+---
+title: Baby age calculator
+layout: page.njk
+---
+<h1>{{ title }}</h1>
+<p>Enter your baby's date of birth to find out what week and month it's currently in!</p>
+<form method="post" action="{{ '/calculate-age' | url }}">
+  <label>
+    Day
+    <input type="text" name="day" maxlength="2">
+  </label>
+  <label>
+    Month
+    <input type="text" name="month" maxlength="2">
+  </label>
+  <label>
+    Year
+    <input type="text" name="year" maxlength="4">
+  </label>
+
+  <button>Go!</button>
+</form>

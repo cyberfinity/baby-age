@@ -26,11 +26,11 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: bldPaths.eleventyInputDir,
-      output: bldPaths.eleventyOutputDir,
+      input: bldPaths.eleventy.inputDir,
+      output: bldPaths.eleventy.outputDir,
 
-      // includes: bldPaths.srcTemplateDirname,
-      // data: bldPaths.srcDataDirname,
+      includes: bldPaths.eleventy.includesDirname,
+      data: bldPaths.eleventy.dataDirname,
     },
   };
 };

@@ -10,8 +10,13 @@ const distDir = (...pathSegments) => path.resolve(
 
 
 module.exports = {
-  eleventyInputDir: path.relative(__dirname, srcDir('site')),
-  eleventyOutputDir: path.relative(__dirname, distDir()),
+  eleventy: {
+    inputDir: path.relative(__dirname, srcDir('site')),
+    outputDir: path.relative(__dirname, distDir()),
+
+    includesDirname: '_includes',
+    dataDirname: '_data',
+  },
 
   styleSrc: (...pathSegments) => srcDir('style', ...pathSegments),
   styleDistDir: distDir('style'),
