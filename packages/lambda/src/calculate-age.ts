@@ -5,13 +5,14 @@ export async function handler (
   context: Context
 ) {
 
-  const params = event.queryStringParameters;
-
   return {
     statusCode: 200,
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(params)
-  }
+    body: JSON.stringify({
+      event,
+      context,
+    }),
+  };
 }
