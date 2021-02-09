@@ -4,7 +4,7 @@ layout: page.njk
 ---
 <h1>{{ title }}</h1>
 <p>Enter your baby's date of birth to find out what week and month it's currently in!</p>
-<form method="post" action="{{ '/calculate-age' | url }}">
+<form method="post" action="{{ '/get-age-url' | url }}">
   <label>
     Day
     <input type="text" name="day" maxlength="2">

@@ -7,3 +7,8 @@
   from = "/test/"
   to = "/.netlify/functions/calculate-age"
   status = 200
+
+[[redirects]]
+  from = "/get-age-url"
+  to = "/.netlify/functions/get-age-url"
+  status = 200
