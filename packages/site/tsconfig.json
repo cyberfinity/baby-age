@@ -2,10 +2,12 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "extends": "@cyberfinity/tsconfig-node",
   "compilerOptions": {
-    "outDir": "dist/"
+    "outDir": "dist/js",
+    "declaration": false,
+    "lib": ["es2018", "DOM"]
   },
   "include": [
-    "src/**/*"
+    "src/js/**/*"
   ],
   "exclude": [
     "node_modules",

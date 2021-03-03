@@ -1,8 +1,10 @@
 {
   "name": "@cyberfinity/baby-age-site",
+  "private": true,
   "version": "0.0.0",
   "description": "Front-end for baby-age app",
   "main": "index.js",
+  "sideEffects": false,
   "scripts": {
     "build": "gulp",
     "start": "gulp serve",
@@ -21,8 +23,15 @@
   "homepage": "https://github.com/cyberfinity/baby-age#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.11.1",
+    "@cyberfinity/tsconfig-node": "^1.0.0",
     "del-cli": "^3.0.1",
     "gulp": "^4.0.2",
-    "gulp-dart-sass": "^1.0.2"
+    "gulp-dart-sass": "^1.0.2",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.1.5",
+    "webpack": "^5.23.0"
+  },
+  "dependencies": {
+    "@cyberfinity/baby-age-shared": "^0.0.0"
   }
 }

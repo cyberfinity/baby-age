@@ -4,15 +4,15 @@ export class BabyAge {
   readonly #dob: DateTime;
   readonly #age: Interval;
 
-  constructor(birthYear: number, birthMonth: number, birthDay: number) {
+  constructor(birthYear: number, birthMonth: number, birthDay: number, currentData?: DateTime) {
     this.#dob = DateTime.local(birthYear,birthMonth, birthDay);
-    const now = DateTime.local();
+    const now = currentData || DateTime.local();
 
     this.#age = Interval.fromDateTimes(this.#dob, now);
   }
 
   days(exact = false): number {
-    const exactDays = this.#age.toDuration('days').toObject().days;
+    const exactDays = this.#age.toDuration('days').toObject().days!;
     return exact ? exactDays : Math.floor(exactDays);
   }
 
@@ -21,7 +21,7 @@ export class BabyAge {
   }
 
   weeks(exact = false): number {
-    const exactWeeks = this.#age.toDuration('weeks').toObject().weeks;
+    const exactWeeks = this.#age.toDuration('weeks').toObject().weeks!;
     return exact ? exactWeeks : Math.floor(exactWeeks);
   }
 
@@ -30,7 +30,7 @@ export class BabyAge {
   }
 
   months(exact = false): number {
-    const exactMonths = this.#age.toDuration('months').toObject().months;
+    const exactMonths = this.#age.toDuration('months').toObject().months!;
     return exact ? exactMonths : Math.floor(exactMonths);
   }
 
@@ -39,16 +39,16 @@ export class BabyAge {
   }
 
   years(exact = false): number {
-    const exactYears = this.#age.toDuration('years').toObject().years;
+    const exactYears = this.#age.toDuration('years').toObject().years!;
     return exact ? exactYears : Math.floor(exactYears);
   }
 
   yearsMonthsAndDays(exact = false): Pick<DurationObject, 'years'|'months'|'days'> {
     const exactAge = this.#age.toDuration(['years','months','days']).toObject();
     return exact ? exactAge : {
-      years: Math.floor(exactAge.years),
-      months: Math.floor(exactAge.months),
-      days: Math.floor(exactAge.days),
+      years: Math.floor(exactAge.years!),
+      months: Math.floor(exactAge.months!),
+      days: Math.floor(exactAge.days!),
     };
   }
 

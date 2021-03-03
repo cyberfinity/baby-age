@@ -17,6 +17,13 @@ export async function handler (
     }
   }
 
+  if (event.body === null) {
+    return {
+      statusCode: 400,
+      body: 'Bad request. No form data in the request body.',
+    }
+  }
+
   const formData = queryStringParse(event.body);
 
   const day = parseInt(formData.day as string);

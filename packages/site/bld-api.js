@@ -20,4 +20,7 @@ module.exports = {
 
   styleSrc: (...pathSegments) => srcDir('style', ...pathSegments),
   styleDistDir: distDir('style'),
+
+  jsSrc: (...pathSegments) => srcDir('js', ...pathSegments),
+  jsDistDir: distDir('js'),
 }
