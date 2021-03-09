@@ -4,19 +4,46 @@ layout: page.njk
 ---
 <h1>{{ title }}</h1>
 <p>Enter your baby's date of birth to find out what week and month it's currently in!</p>
-<form method="post" action="{{ '/get-age-url' | url }}">
+<form method="post" action="{{ '/get-age-url' | url }}" id="dob-form">
   <label>
     Day
-    <input type="text" name="day" maxlength="2">
+    <input
+      name="day"
+      placeholder="DD"
+      type="text"
+      maxlength="2"
+      required
+      inputmode="numeric"
+      pattern="^([012]?\d|3[01])$"
+    >
   </label>
   <label>
     Month
-    <input type="text" name="month" maxlength="2">
+    <input
+      name="month"
+      placeholder="MM"
+      type="text"
+      maxlength="2"
+      required
+      inputmode="numeric"
+      pattern="^(0?\d|1[012])$"
+    >
   </label>
   <label>
     Year
-    <input type="text" name="year" maxlength="4">
+    <input
+      name="year"
+      placeholder="YYYY"
+      type="text"
+      maxlength="4"
+      required
+      inputmode="numeric"
+      pattern="^\d{1,4}$"
+    >
   </label>
 
   <button>Go!</button>
+
 </form>
+<div id="age-display">
+</div>

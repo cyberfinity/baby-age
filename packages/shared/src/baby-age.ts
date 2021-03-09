@@ -16,26 +16,14 @@ export class BabyAge {
     return exact ? exactDays : Math.floor(exactDays);
   }
 
-  dayNumber(): number {
-    return this.days() + 1;
-  }
-
   weeks(exact = false): number {
     const exactWeeks = this.#age.toDuration('weeks').toObject().weeks!;
     return exact ? exactWeeks : Math.floor(exactWeeks);
   }
 
-  weekNumber(): number {
-    return this.weeks() + 1;
-  }
-
   months(exact = false): number {
     const exactMonths = this.#age.toDuration('months').toObject().months!;
     return exact ? exactMonths : Math.floor(exactMonths);
-  }
-
-  monthNumber(): number {
-    return this.months() + 1;
   }
 
   years(exact = false): number {
@@ -48,6 +36,14 @@ export class BabyAge {
     return exact ? exactAge : {
       years: Math.floor(exactAge.years!),
       months: Math.floor(exactAge.months!),
+      days: Math.floor(exactAge.days!),
+    };
+  }
+
+  weeksAndDays(exact = false): Pick<DurationObject, 'weeks'|'days'> {
+    const exactAge = this.#age.toDuration(['weeks','days']).toObject();
+    return exact ? exactAge : {
+      weeks: Math.floor(exactAge.weeks!),
       days: Math.floor(exactAge.days!),
     };
   }
